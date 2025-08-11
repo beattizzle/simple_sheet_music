@@ -53,6 +53,8 @@ class Clef implements MusicalSymbol {
     GlyphPaths paths,
   ) =>
       ClefMetrics(this, paths);
+
+  String get name => clefType.name;
 }
 
 /// Represents the metrics of a clef symbol.
