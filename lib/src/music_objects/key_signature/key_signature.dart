@@ -13,6 +13,12 @@ import 'package:simple_sheet_music/src/musical_context.dart';
 import 'package:simple_sheet_music/src/sheet_music_layout.dart';
 
 class KeySignature implements MusicalSymbol {
+  KeySignature(
+    this.keySignatureType, {
+    this.color = Colors.black,
+    this.margin = const EdgeInsets.all(10),
+  });
+
   const KeySignature.cMajor({
     this.color = Colors.black,
     this.margin = const EdgeInsets.all(10),
