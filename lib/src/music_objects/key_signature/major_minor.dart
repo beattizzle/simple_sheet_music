@@ -1,0 +1,4 @@
+enum MajorMinor {
+  major,
+  minor,
+}
