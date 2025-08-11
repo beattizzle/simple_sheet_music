@@ -76,6 +76,12 @@ enum KeySignatureType {
   /// Returns whether the key signature is a minor key.
   bool get isMinor => majorMinor == MajorMinor.minor;
 
+  /// Returns the previously defined isSharp
+  bool get isSharp => glyphUsed == Glyph.sharp;
+
+  /// Returns the previously defined isFlat property.
+  bool get isFlat => glyphUsed == Glyph.flat;
+
   /// Returns the positions of the key signature on the staff for the given [clefType].
   List<int> keySignaturePositions(ClefType clefType) => glyphUsed == Glyph.sharp
       ? clefType.sharpKeySignaturePositions.sublist(0, keyNum)
