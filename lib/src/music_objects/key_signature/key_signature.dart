@@ -163,6 +163,75 @@ class KeySignature implements MusicalSymbol {
     this.margin = const EdgeInsets.all(10),
   }) : keySignatureType = KeySignatureType.aFlatMinor;
 
+  static Set<KeySignature> all() => {
+        const KeySignature.cMajor(),
+        const KeySignature.aMinor(),
+        const KeySignature.gMajor(),
+        const KeySignature.eMinor(),
+        const KeySignature.dMajor(),
+        const KeySignature.bMinor(),
+        const KeySignature.aMajor(),
+        const KeySignature.fSharpMinor(),
+        const KeySignature.eMajor(),
+        const KeySignature.cSharpMinor(),
+        const KeySignature.bMajor(),
+        const KeySignature.gSharpMinor(),
+        const KeySignature.fSharpMajor(),
+        const KeySignature.dSharpMinor(),
+        const KeySignature.cSharpMajor(),
+        const KeySignature.aSharpMinor(),
+        const KeySignature.fMajor(),
+        const KeySignature.dMinor(),
+        const KeySignature.bFlatMajor(),
+        const KeySignature.gMinor(),
+        const KeySignature.eFlatMajor(),
+        const KeySignature.cMinor(),
+        const KeySignature.aFlatMajor(),
+        const KeySignature.fMinor(),
+        const KeySignature.dFlatMajor(),
+        const KeySignature.bFlatMinor(),
+        const KeySignature.gFlatMajor(),
+        const KeySignature.eFlatMinor(),
+        const KeySignature.cFlatMajor(),
+        const KeySignature.aFlatMinor(),
+      };
+
+  static Set<KeySignature> allMajor() => {
+        const KeySignature.cMajor(),
+        const KeySignature.gMajor(),
+        const KeySignature.dMajor(),
+        const KeySignature.aMajor(),
+        const KeySignature.eMajor(),
+        const KeySignature.bMajor(),
+        const KeySignature.fSharpMajor(),
+        const KeySignature.cSharpMajor(),
+        const KeySignature.fMajor(),
+        const KeySignature.bFlatMajor(),
+        const KeySignature.eFlatMajor(),
+        const KeySignature.aFlatMajor(),
+        const KeySignature.dFlatMajor(),
+        const KeySignature.gFlatMajor(),
+        const KeySignature.cFlatMajor(),
+      };
+
+  static Set<KeySignature> allMinor() => {
+        const KeySignature.aMinor(),
+        const KeySignature.eMinor(),
+        const KeySignature.bMinor(),
+        const KeySignature.fSharpMinor(),
+        const KeySignature.cSharpMinor(),
+        const KeySignature.gSharpMinor(),
+        const KeySignature.dSharpMinor(),
+        const KeySignature.aSharpMinor(),
+        const KeySignature.dMinor(),
+        const KeySignature.gMinor(),
+        const KeySignature.cMinor(),
+        const KeySignature.fMinor(),
+        const KeySignature.bFlatMinor(),
+        const KeySignature.eFlatMinor(),
+        const KeySignature.aFlatMinor(),
+      };
+
   final KeySignatureType keySignatureType;
 
   @override

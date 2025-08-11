@@ -1,0 +1,146 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:simple_sheet_music/src/music_objects/key_signature/key_signature.dart';
+import 'package:simple_sheet_music/src/music_objects/key_signature/keysignature_type.dart';
+
+void main() {
+  group('KeySignature tests', () {
+    test('Named constructor', () {
+      const cMajor = KeySignature.cMajor();
+      const aMinor = KeySignature.aMinor();
+      const gMajor = KeySignature.gMajor();
+      const eMinor = KeySignature.eMinor();
+      const dMajor = KeySignature.dMajor();
+      const bMinor = KeySignature.bMinor();
+      const aMajor = KeySignature.aMajor();
+      const fSharpMinor = KeySignature.fSharpMinor();
+      const eMajor = KeySignature.eMajor();
+      const cSharpMinor = KeySignature.cSharpMinor();
+      const bMajor = KeySignature.bMajor();
+      const gSharpMinor = KeySignature.gSharpMinor();
+      const fSharpMajor = KeySignature.fSharpMajor();
+      const dSharpMinor = KeySignature.dSharpMinor();
+      const cSharpMajor = KeySignature.cSharpMajor();
+      const aSharpMinor = KeySignature.aSharpMinor();
+      const fMajor = KeySignature.fMajor();
+      const dMinor = KeySignature.dMinor();
+      const bFlatMajor = KeySignature.bFlatMajor();
+      const gMinor = KeySignature.gMinor();
+      const eFlatMajor = KeySignature.eFlatMajor();
+      const cMinor = KeySignature.cMinor();
+      const aFlatMajor = KeySignature.aFlatMajor();
+      const fMinor = KeySignature.fMinor();
+      const dFlatMajor = KeySignature.dFlatMajor();
+      const bFlatMinor = KeySignature.bFlatMinor();
+      const gFlatMajor = KeySignature.gFlatMajor();
+      const eFlatMinor = KeySignature.eFlatMinor();
+      const cFlatMajor = KeySignature.cFlatMajor();
+
+      expect(cMajor.keySignatureType, KeySignatureType.cMajor);
+      expect(aMinor.keySignatureType, KeySignatureType.aMinor);
+      expect(gMajor.keySignatureType, KeySignatureType.gMajor);
+      expect(eMinor.keySignatureType, KeySignatureType.eMinor);
+      expect(dMajor.keySignatureType, KeySignatureType.dMajor);
+      expect(bMinor.keySignatureType, KeySignatureType.bMinor);
+      expect(aMajor.keySignatureType, KeySignatureType.aMajor);
+      expect(fSharpMinor.keySignatureType, KeySignatureType.fSharpMinor);
+      expect(eMajor.keySignatureType, KeySignatureType.eMajor);
+      expect(cSharpMinor.keySignatureType, KeySignatureType.cSharpMinor);
+      expect(bMajor.keySignatureType, KeySignatureType.bMajor);
+      expect(gSharpMinor.keySignatureType, KeySignatureType.gSharpMinor);
+      expect(fSharpMajor.keySignatureType, KeySignatureType.fSharpMajor);
+      expect(dSharpMinor.keySignatureType, KeySignatureType.dSharpMinor);
+      expect(cSharpMajor.keySignatureType, KeySignatureType.cSharpMajor);
+      expect(aSharpMinor.keySignatureType, KeySignatureType.aSharpMinor);
+      expect(fMajor.keySignatureType, KeySignatureType.fMajor);
+      expect(dMinor.keySignatureType, KeySignatureType.dMinor);
+      expect(bFlatMajor.keySignatureType, KeySignatureType.bFlatMajor);
+      expect(gMinor.keySignatureType, KeySignatureType.gMinor);
+      expect(eFlatMajor.keySignatureType, KeySignatureType.eFlatMajor);
+      expect(cMinor.keySignatureType, KeySignatureType.cMinor);
+      expect(aFlatMajor.keySignatureType, KeySignatureType.aFlatMajor);
+      expect(fMinor.keySignatureType, KeySignatureType.fMinor);
+      expect(dFlatMajor.keySignatureType, KeySignatureType.dFlatMajor);
+      expect(bFlatMinor.keySignatureType, KeySignatureType.bFlatMinor);
+      expect(gFlatMajor.keySignatureType, KeySignatureType.gFlatMajor);
+      expect(eFlatMinor.keySignatureType, KeySignatureType.eFlatMinor);
+      expect(cFlatMajor.keySignatureType, KeySignatureType.cFlatMajor);
+    });
+
+    test('static set tests', () {
+      final allMajor = KeySignature.allMajor();
+      final allMinor = KeySignature.allMinor();
+      final all = KeySignature.all();
+
+      expect(allMajor, isA<Set<KeySignature>>());
+      expect(allMinor, isA<Set<KeySignature>>());
+      expect(all, isA<Set<KeySignature>>());
+
+      expect(allMajor.length, 15);
+      expect(allMinor.length, 15);
+      expect(all.length, 30);
+
+      expect(allMajor.contains(const KeySignature.cMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.gMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.dMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.aMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.eMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.bMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.fSharpMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.cSharpMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.fMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.bFlatMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.eFlatMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.aFlatMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.dFlatMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.gFlatMajor()), isTrue);
+      expect(allMajor.contains(const KeySignature.cFlatMajor()), isTrue);
+
+      expect(allMinor.contains(const KeySignature.aMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.eMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.bMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.fSharpMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.cSharpMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.gSharpMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.dSharpMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.aSharpMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.dMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.gMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.cMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.fMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.bFlatMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.eFlatMinor()), isTrue);
+      expect(allMinor.contains(const KeySignature.aFlatMinor()), isTrue);
+
+      expect(all.contains(const KeySignature.cMajor()), isTrue);
+      expect(all.contains(const KeySignature.aMinor()), isTrue);
+      expect(all.contains(const KeySignature.gMajor()), isTrue);
+      expect(all.contains(const KeySignature.eMinor()), isTrue);
+      expect(all.contains(const KeySignature.dMajor()), isTrue);
+      expect(all.contains(const KeySignature.bMinor()), isTrue);
+      expect(all.contains(const KeySignature.aMajor()), isTrue);
+      expect(all.contains(const KeySignature.fSharpMinor()), isTrue);
+      expect(all.contains(const KeySignature.eMajor()), isTrue);
+      expect(all.contains(const KeySignature.cSharpMinor()), isTrue);
+      expect(all.contains(const KeySignature.bMajor()), isTrue);
+      expect(all.contains(const KeySignature.gSharpMinor()), isTrue);
+      expect(all.contains(const KeySignature.fSharpMajor()), isTrue);
+      expect(all.contains(const KeySignature.dSharpMinor()), isTrue);
+      expect(all.contains(const KeySignature.cSharpMajor()), isTrue);
+      expect(all.contains(const KeySignature.aSharpMinor()), isTrue);
+      expect(all.contains(const KeySignature.fMajor()), isTrue);
+      expect(all.contains(const KeySignature.dMinor()), isTrue);
+      expect(all.contains(const KeySignature.bFlatMajor()), isTrue);
+      expect(all.contains(const KeySignature.gMinor()), isTrue);
+      expect(all.contains(const KeySignature.eFlatMajor()), isTrue);
+      expect(all.contains(const KeySignature.cMinor()), isTrue);
+      expect(all.contains(const KeySignature.aFlatMajor()), isTrue);
+      expect(all.contains(const KeySignature.fMinor()), isTrue);
+      expect(all.contains(const KeySignature.dFlatMajor()), isTrue);
+      expect(all.contains(const KeySignature.bFlatMinor()), isTrue);
+      expect(all.contains(const KeySignature.gFlatMajor()), isTrue);
+      expect(all.contains(const KeySignature.eFlatMinor()), isTrue);
+      expect(all.contains(const KeySignature.cFlatMajor()), isTrue);
+      expect(all.contains(const KeySignature.aFlatMinor()), isTrue);
+    });
+  });
+}
