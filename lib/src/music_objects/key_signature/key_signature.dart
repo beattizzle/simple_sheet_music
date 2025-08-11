@@ -258,6 +258,10 @@ class KeySignature implements MusicalSymbol {
         metadata,
         paths,
       );
+
+  String get name => keySignatureType.name;
+
+  String get majorMinor => keySignatureType.majorMinor.name;
 }
 
 class KeySignatureMetrics implements MusicalSymbolMetrics {
@@ -346,10 +350,6 @@ class KeySignatureMetrics implements MusicalSymbolMetrics {
 
   @override
   EdgeInsets get margin => keySignature.margin;
-
-  String get name => keySignatureType.name;
-
-  String get majorMinor => keySignatureType.majorMinor.name;
 }
 
 class KeySignatureRenderer implements MusicalSymbolRenderer {
