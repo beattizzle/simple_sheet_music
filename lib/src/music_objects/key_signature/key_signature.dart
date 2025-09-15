@@ -9,6 +9,7 @@ import 'package:simple_sheet_music/src/music_objects/interface/musical_symbol.da
 import 'package:simple_sheet_music/src/music_objects/interface/musical_symbol_metrics.dart';
 import 'package:simple_sheet_music/src/music_objects/interface/musical_symbol_renderer.dart';
 import 'package:simple_sheet_music/src/music_objects/key_signature/keysignature_type.dart';
+import 'package:simple_sheet_music/src/music_objects/key_signature/major_minor.dart';
 import 'package:simple_sheet_music/src/musical_context.dart';
 import 'package:simple_sheet_music/src/sheet_music_layout.dart';
 
@@ -169,74 +170,34 @@ class KeySignature implements MusicalSymbol {
     this.margin = const EdgeInsets.all(10),
   }) : keySignatureType = KeySignatureType.aFlatMinor;
 
-  static Set<KeySignature> all() => {
-        const KeySignature.cMajor(),
-        const KeySignature.aMinor(),
-        const KeySignature.gMajor(),
-        const KeySignature.eMinor(),
-        const KeySignature.dMajor(),
-        const KeySignature.bMinor(),
-        const KeySignature.aMajor(),
-        const KeySignature.fSharpMinor(),
-        const KeySignature.eMajor(),
-        const KeySignature.cSharpMinor(),
-        const KeySignature.bMajor(),
-        const KeySignature.gSharpMinor(),
-        const KeySignature.fSharpMajor(),
-        const KeySignature.dSharpMinor(),
-        const KeySignature.cSharpMajor(),
-        const KeySignature.aSharpMinor(),
-        const KeySignature.fMajor(),
-        const KeySignature.dMinor(),
-        const KeySignature.bFlatMajor(),
-        const KeySignature.gMinor(),
-        const KeySignature.eFlatMajor(),
-        const KeySignature.cMinor(),
-        const KeySignature.aFlatMajor(),
-        const KeySignature.fMinor(),
-        const KeySignature.dFlatMajor(),
-        const KeySignature.bFlatMinor(),
-        const KeySignature.gFlatMajor(),
-        const KeySignature.eFlatMinor(),
-        const KeySignature.cFlatMajor(),
-        const KeySignature.aFlatMinor(),
+  static Set<KeySignature> all({Color? color, EdgeInsets? margin}) => {
+        ...allMajor(color: color, margin: margin),
+        ...allMinor(color: color, margin: margin),
       };
 
-  static Set<KeySignature> allMajor() => {
-        const KeySignature.cMajor(),
-        const KeySignature.gMajor(),
-        const KeySignature.dMajor(),
-        const KeySignature.aMajor(),
-        const KeySignature.eMajor(),
-        const KeySignature.bMajor(),
-        const KeySignature.fSharpMajor(),
-        const KeySignature.cSharpMajor(),
-        const KeySignature.fMajor(),
-        const KeySignature.bFlatMajor(),
-        const KeySignature.eFlatMajor(),
-        const KeySignature.aFlatMajor(),
-        const KeySignature.dFlatMajor(),
-        const KeySignature.gFlatMajor(),
-        const KeySignature.cFlatMajor(),
-      };
+  static Set<KeySignature> allMajor({Color? color, EdgeInsets? margin}) =>
+      KeySignatureType.values
+          .where((type) => type.majorMinor == MajorMinor.major)
+          .map(
+            (type) => KeySignature(
+              type,
+              color: color ?? Colors.black,
+              margin: margin ?? const EdgeInsets.all(10),
+            ),
+          )
+          .toSet();
 
-  static Set<KeySignature> allMinor() => {
-        const KeySignature.aMinor(),
-        const KeySignature.eMinor(),
-        const KeySignature.bMinor(),
-        const KeySignature.fSharpMinor(),
-        const KeySignature.cSharpMinor(),
-        const KeySignature.gSharpMinor(),
-        const KeySignature.dSharpMinor(),
-        const KeySignature.aSharpMinor(),
-        const KeySignature.dMinor(),
-        const KeySignature.gMinor(),
-        const KeySignature.cMinor(),
-        const KeySignature.fMinor(),
-        const KeySignature.bFlatMinor(),
-        const KeySignature.eFlatMinor(),
-        const KeySignature.aFlatMinor(),
-      };
+  static Set<KeySignature> allMinor({Color? color, EdgeInsets? margin}) =>
+      KeySignatureType.values
+          .where((type) => type.majorMinor == MajorMinor.minor)
+          .map(
+            (type) => KeySignature(
+              type,
+              color: color ?? Colors.black,
+              margin: margin ?? const EdgeInsets.all(10),
+            ),
+          )
+          .toSet();
 
   final KeySignatureType keySignatureType;
 

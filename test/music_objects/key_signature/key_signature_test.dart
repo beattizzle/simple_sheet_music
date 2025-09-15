@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:simple_sheet_music/src/music_objects/key_signature/key_signature.dart';
 import 'package:simple_sheet_music/src/music_objects/key_signature/keysignature_type.dart';
@@ -141,6 +142,48 @@ void main() {
       expect(all.contains(const KeySignature.eFlatMinor()), isTrue);
       expect(all.contains(const KeySignature.cFlatMajor()), isTrue);
       expect(all.contains(const KeySignature.aFlatMinor()), isTrue);
+    });
+
+    test(
+        'Set<KeySignature> functions for all, allMajor, and allMinor should return a set with the correct color and margin',
+        () {
+      // Arrange
+      final all = KeySignature.all(
+        color: Colors.blue,
+        margin: const EdgeInsets.all(10),
+      );
+      final allMajor = KeySignature.allMajor(
+        color: Colors.green,
+      );
+
+      final allMinor = KeySignature.allMinor(
+        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+      );
+
+      // Assert
+      expect(all, isA<Set<KeySignature>>());
+      for (final keySignature in all) {
+        expect(keySignature, isA<KeySignature>());
+        expect(keySignature.color, Colors.blue);
+        expect(keySignature.margin, const EdgeInsets.all(10));
+      }
+
+      expect(allMajor, isA<Set<KeySignature>>());
+      for (final keySignature in allMajor) {
+        expect(keySignature, isA<KeySignature>());
+        expect(keySignature.color, Colors.green);
+        expect(keySignature.margin, const EdgeInsets.all(10));
+      }
+
+      expect(allMinor, isA<Set<KeySignature>>());
+      for (final keySignature in allMinor) {
+        expect(keySignature, isA<KeySignature>());
+        expect(keySignature.color, Colors.black);
+        expect(
+          keySignature.margin,
+          const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+        );
+      }
     });
   });
 }
